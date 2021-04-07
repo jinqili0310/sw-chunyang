@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-06 22:22:46
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-07 00:55:33
- * @FilePath: /sw-chunyang/pages/components/navberger.js
+ * @LastEditTime: 2021-04-07 11:02:43
+ * @FilePath: \sw-chunyang\pages\components\navberger.js
  */
 import React, { useState } from 'react';
 import { Menu, Dropdown, Affix } from 'antd';
@@ -47,7 +47,7 @@ export default function Navberger() {
 					<div className="berger-menu">
 						<Dropdown overlay={menu} trigger={[ 'click' ]}>
 							<a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
-								<img src="/assets/images/bars-solid.png" />
+								<img src="/assets/images/bars-round.png" />
 							</a>
 						</Dropdown>
 					</div>
