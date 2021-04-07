@@ -1,65 +1,69 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+/*
+ * @Author: Jinqi Li
+ * @Date: 1985-10-26 01:15:00
+ * @LastEditors: Jinqi Li
+ * @LastEditTime: 2021-04-06 20:12:15
+ * @FilePath: /sw-chunyang/pages/index.js
+ */
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+
+function useWindowSize() {
+	const [ windowSize, setWindowSize ] = useState({
+		width: undefined,
+		height: undefined
+	});
+
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			function handleResize() {
+				setWindowSize({
+					width: window.innerWidth,
+					height: window.innerHeight
+				});
+			}
+
+			window.addEventListener('resize', handleResize);
+
+			handleResize();
+
+			return () => window.removeEventListener('resize', handleResize);
+		}
+	}, []);
+	return windowSize;
+}
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+	const size = useWindowSize();
+	const router = useRouter();
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+	const handleClick = (e) => {
+		e.preventDefault();
+		router.push('/menu');
+	};
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+	return (
+		<React.Fragment>
+			<div className="home-container" onClick={handleClick}>
+				<div className="home-logo">
+					<img src="/assets/images/logo-type.png" />
+				</div>
+				<div className="home-flower">
+					{size.width > 480 ? (
+						<img className="fade-in" src="/assets/images/flower.png" />
+					) : (
+						<img className="fade-in" src="/assets/images/flower-m.png" />
+					)}
+				</div>
+				<div className="home-title">
+					<span>Sunwoo Webzine</span>
+				</div>
+				<div className="home-twitter">
+					<a href="https://twitter.com/ChunyangSw0412" target="__blank">
+						<img src="/assets/images/twitter-brands.png" />
+					</a>
+				</div>
+			</div>
+		</React.Fragment>
+	);
 }

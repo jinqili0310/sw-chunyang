@@ -1,16 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&display=swap');
+/* font-family: 'Noto Serif TC', serif; */
+@font-face {
+	font-family: 'Adlinnaka';
+	src: url("/assets/fonts/Adlinnaka-BoldDemo.ttf");
+}
+@font-face {
+	font-family: 'Ageo';
+	src: url("/assets/fonts/AgeoPersonalUse-Medium.otf");
+}
+@font-face {
+	font-family: 'Iroke Batang';
+	src: url("/assets/fonts/IropkeBatangM.ttf");
+}
+@font-face {
+	font-family: 'Andalusia';
+	src: url("/assets/fonts/Andalusia.ttf");
+}
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: 'Ageo', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+		Droid Sans, Helvetica Neue, sans-serif;
+	background-image: url("/assets/images/background.png");
+	background-repeat: repeat;
+	background-attachment: fixed;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* MOBILE */
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+	.home-logo img {
+		height: 160px;
+	}
+	.home-flower {
+		height: 100%;
+		width: 100%;
+	}
+	.home-flower img {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+}
+/* Media Query for low resolution Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+	.home-logo img {
+		height: 160px;
+	}
+	.home-flower {
+		bottom: 0;
+	}
+	.home-flower img {
+		width: 100%;
+	}
+}
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+	.home-logo img {
+		height: 160px;
+	}
+	.home-flower {
+		bottom: 0;
+	}
+	.home-flower img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+/* PC */
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+	.home-logo img {
+		height: 300px;
+	}
+	.home-flower {
+		height: 100%;
+	}
+	.home-flower img {
+		height: 100%;
+	}
+}
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+	.home-logo img {
+		height: 300px;
+	}
+	.home-flower {
+		height: 100%;
+	}
+	.home-flower img {
+		height: 100%;
+	}
+}
+
+/* FADE IN */
+.fade-in {
+	animation: fadeIn ease 3s;
+	-webkit-animation: fadeIn ease 3s;
+	-moz-animation: fadeIn ease 3s;
+	-o-animation: fadeIn ease 3s;
+	-ms-animation: fadeIn ease 3s;
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* #feb620 */
+/* #f63e2c */
+
+/* index.js */
+.home-container {
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+}
+.home-logo {
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	position: absolute;
+}
+.home-logo img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.home-flower {
+	z-index: 5;
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+}
+.home-title {
+	position: absolute;
+	bottom: 2%;
+	text-align: center;
+	z-index: 10;
+	margin: auto;
+	left: 0;
+	right: 0;
+}
+.home-title span {
+	color: #feb620;
+	font-family: "Ageo";
+	font-size: 12px;
+}
+.home-twitter {
+	z-index: 15;
+	margin: 0;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+}
+.home-twitter img {
+	width: 30px;
+}
+
+/* menu */
+.menu-logo {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	z-index: 2;
+}
+.menu-logo img {
+	width: 80px;
+}
+.menu-block {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 60%;
+	margin: 140px 0 0 0;
+}
+.menu-icon {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.menu-icon img {
+	height: auto;
+	width: 120%;
+  margin-left: -10%;
+}
+.menu-icon img:hover, .menu-icon img:active {
+  width: 140%;
+}
+.menu-icon:hover, .menu-icon:active {
+  z-index: 100 !important;
+}
+.menu-icon:nth-child(1) {
+	z-index: 25;
+}
+.menu-icon:nth-child(2) {
+	z-index: 10;
+}
+.menu-icon:nth-child(3) {
+	z-index: 15;
+}
+.menu-icon:nth-child(4) {
+	z-index: 20;
+}
+/* <839 */
+@media (max-width: 839px) {
+	.menu-block {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.menu-icon:nth-child(1) {
+		width: 45vw;
+	}
+	.menu-icon:nth-child(2) {
+		width: 40vw;
+	}
+	.menu-icon:nth-child(3) {
+		width: 38vw;
+	}
+	.menu-icon:nth-child(4) {
+		width: 48vw;
+	}
+}
+/* >840 */
+@media (min-width: 840px) {
+	.menu-icon:nth-child(1) {
+		width: 220px;
+	}
+	.menu-icon:nth-child(2) {
+		width: 200px;
+	}
+	.menu-icon:nth-child(3) {
+		width: 190px;
+	}
+	.menu-icon:nth-child(4) {
+		width: 230px;
+	}
+}
+
+/* navbar */
+.nav-div {
+  position: fixed;
+  margin: 0;
+  padding: 10px 20px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+.nav-logo {
+  display: inline-block;
+}
+.nav-logo img {
+  width: 80px;
+}
+.nav-menu {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+.nav-menu span {
+  font-family: 'Andalusia';
+  font-size: 24px;
+}
+.nav-menu a:nth-child(odd) {
+  color: #feb620;
+}
+.nav-menu a:nth-child(even) {
+  color: #f63e2c;
+}
+.berger-menu {
+  display: inline-block;
+}
+.berger-menu img {
+  width: 30px;
+}
+.berger-link {
+  font-size: 20px;
+  font-family: 'Andalusia';
+  float: right;
+  padding: 1em 0 0 0 !important;
+}
+.ant-dropdown-menu {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.ant-dropdown-menu li:nth-child(odd) a {
+  color: #feb620;
+}
+.ant-dropdown-menu li:nth-child(even) a {
+  color: #f63e2c;
+}
+
+/* profile */
+.profile-content {
+  margin-top: 100px;
 }
