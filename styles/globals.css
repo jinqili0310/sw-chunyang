@@ -222,6 +222,7 @@ a {
 }
 .home-twitter img {
 	width: 30px;
+	height: auto;
 }
 
 /* menu */
