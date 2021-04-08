@@ -2,13 +2,14 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-07 22:13:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-08 13:14:43
+ * @LastEditTime: 2021-04-08 14:34:15
  * @FilePath: \sw-chunyang\pages\memory\index.js
  */
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
 import Navberger from '../components/navberger';
 import { AspectRatio } from 'react-aspect-ratio';
+import { BackTop } from 'antd';
 
 function useWindowSize() {
 	const [ windowSize, setWindowSize ] = useState({
@@ -100,6 +101,9 @@ export default function Memory() {
 					</div>
 				</div>
 			</div>
+			<BackTop>
+				<h1>^</h1>
+			</BackTop>
 		</React.Fragment>
 	);
 }
