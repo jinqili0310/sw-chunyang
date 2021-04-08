@@ -606,6 +606,9 @@ a {
 	margin-left: 12.5%;
 	border-left: dotted #f63e2c 4px;
 }
+.memory-date {
+	margin: 3em 0;
+}
 .memory-date span {
 	display: inline-block;
 }
@@ -642,8 +645,11 @@ a {
 	margin-left: 12.5%;
 	border-left: dotted #f63e2c 4px;
 	padding-top: 2em;
-	margin-right: 1vw;
 	padding-left: 1vw;
+	/* border-image: url("/assets/images/dot.png") repeat;
+	border-width: 0 0 0 5px;
+	border: solid transparent; */
+	/* padding-left: 5px; */
 }
 .memory-img {
 	position: relative;
@@ -673,4 +679,20 @@ a {
 	object-fit: cover;
 	object-position: center;
 	border-radius: 10px;
+}
+.memory-vid {
+	position: relative;
+	/* width: 90%; */
+	/* min-width: 250px;
+	max-width: 100%; */
+	/* max-width: 560px; */
+	/* max-height: 315px; */
+	overflow: hidden;
+	/* border: #feb620 1.5vw solid; */
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	margin: 3vw 2vw;
+	box-shadow: 0 0 0 2vw #feb620;
 }
