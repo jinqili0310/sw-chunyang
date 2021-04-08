@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-07 22:13:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-07 23:30:49
+ * @LastEditTime: 2021-04-07 23:50:10
  * @FilePath: /sw-chunyang/pages/memory/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -57,12 +57,12 @@ export default function Memory() {
 							{/* <div className="memory-dash" style={{ height: '60vh', display: 'inline-block' }}>
 								{' '}
 							</div> */}
-							<img src="/assets/images/baby-1.jpg" />
-                            <img src="/assets/images/baby-2.jpg" />
-                            <img src="/assets/images/baby-3.jpg" />
-                            <img src="/assets/images/baby-4.jpg" />
-                            <img src="/assets/images/baby-5.jpg" />
-                            <img src="/assets/images/baby-6.jpg" />
+							<div className="memory-img"><img src="/assets/images/baby-1.jpg" /></div>
+                            <div className="memory-img"><img src="/assets/images/baby-2.jpg" /></div>
+                            <div className="memory-img"><img src="/assets/images/baby-3.jpg" /></div>
+                            <div className="memory-img"><img src="/assets/images/baby-4.jpg" /></div>
+                            <div className="memory-img"><img src="/assets/images/baby-5.jpg" /></div>
+                            <div className="memory-img"><img src="/assets/images/baby-6.jpg" /></div>
 						</div>
 					</div>
 				</div>
