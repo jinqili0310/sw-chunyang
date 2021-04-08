@@ -7,6 +7,12 @@
 @font-face {
 	font-family: 'Ageo';
 	src: url("/assets/fonts/AgeoPersonalUse-Medium.otf");
+  font-weight: normal;
+}
+@font-face {
+	font-family: 'Ageo';
+	src: url("/assets/fonts/AgeoPersonalUse-Bold.otf");
+  font-weight: bold;
 }
 @font-face {
 	font-family: 'Iropke Batang';
@@ -341,6 +347,7 @@ a {
 }
 .berger-menu img {
 	width: 30px;
+	margin-bottom: 10px;
 }
 .berger-link {
 	font-size: 24px;
@@ -352,6 +359,7 @@ a {
 	background: url("/assets/images/background.jpg") no-repeat !important;
 	padding-left: 1em !important;
 	padding-bottom: 1em !important;
+	border-radius: 10px;
 }
 .ant-dropdown-menu {
 	display: block;
@@ -378,7 +386,7 @@ a {
 	background: url("/assets/images/background.jpg") no-repeat;
 }
 .profile-top {
-	margin-top: 100px;
+	/* margin-top: 100px; */
 }
 .profile-left {
 	text-align: center;
@@ -578,4 +586,68 @@ a {
 }
 .profile-box h3 {
 	color: #f63e2c;
+}
+
+/* memory */
+.fix-content {
+	margin-top: 100px;
+}
+.memory-fix {
+	padding: 5%;
+}
+.memory-top {
+	/* margin-top: 100px; */
+}
+.memory-top img {
+	width: 25%;
+}
+.memory-dash {
+	height: 15vw;
+	margin-left: 12.5%;
+	border-left: dashed #f63e2c 2px;
+}
+.memory-date span {
+	display: inline-block;
+}
+.memory-left {
+  text-align: center;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #feb620;
+  margin: 0 auto;
+  width: 25%;
+  display: inline-block;
+}
+.memory-left span {
+  text-align: right;
+}
+.memory-left div {
+  color: #f63e2c;
+  font-size: 12px;
+  line-height: 12px;
+}
+.memory-right {
+  color: #f63e2c;
+  font-family: 'Ageo';
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+  padding-left: 1em;
+}
+.memory-source {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 12.5%;
+  border-left: dashed #f63e2c 2px;
+  padding-top: 2em;
+  margin-right: 5%;
+}
+.memory-source img {
+  width: 25%;
+  border: #feb620 1.5vw solid;
+  border-radius: 10px;
+  margin: 0 1vw 1vw 1vw;
+  min-width: 120px;
 }
