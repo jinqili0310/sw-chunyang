@@ -9,7 +9,7 @@
 	src: url("/assets/fonts/AgeoPersonalUse-Medium.otf");
 }
 @font-face {
-	font-family: 'Iroke Batang';
+	font-family: 'Iropke Batang';
 	src: url("/assets/fonts/IropkeBatangM.ttf");
 }
 @font-face {
@@ -348,13 +348,13 @@ a {
 	padding: 1em 0 0 0 !important;
 }
 .ant-dropdown {
-  top: 70px !important;
   background: url("/assets/images/background.png") no-repeat center center fixed !important;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
   padding-left: 1em !important;
+  padding-bottom: 1em !important;
 }
 .ant-dropdown-menu {
   display: block;
@@ -399,6 +399,9 @@ a {
 		width: 28vw;
 		max-width: 400px;
 	}
+  .profile-left img {
+    position: fixed;
+  }
 }
 @media (max-width: 767px) {
 	.profile-left img {
@@ -411,9 +414,10 @@ a {
 	margin-right: auto;
 }
 .profile-right {
-	padding: 0 10% 2% 2%;
+	padding: 2%;
 }
 .profile-right-top {
+  padding-right: 10%;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row-reverse;
@@ -433,7 +437,7 @@ a {
 	display: inline !important;
 }
 .title-kr {
-	font-family: 'Iroke Batang';
+	font-family: 'Iropke Batang';
 	display: inline-block;
 }
 .title-right {
@@ -499,4 +503,44 @@ a {
 	.title-cn,.title-en {
 		font-size: 30px;
 	}
+}
+.ant-table-thead, .ant-table-pagination {
+  display: none !important; 
+}
+.ant-table {
+  background: transparent !important;
+}
+.ant-table-cell:nth-child(1) {
+  color: #f63e2c;
+  text-align: right;
+}
+.ant-table-cell:nth-child(2) {
+  font-family: 'Iropke Batang';
+  color: #feb620;
+  width: 16px;
+  line-height: 16px;
+  font-size: 40px;
+}
+.ant-table-cell:nth-child(3) {
+  color: #000;
+}
+.profile-korean {
+  font-family: 'Iropke Batang';
+  font-size: 16px;
+}
+.ant-table-row,.ant-table-cell {
+  border: none;
+}
+.ant-table-tbody > tr > td {
+  border: none !important;
+}
+.ant-table-thead > tr > th, .ant-table-tbody > tr > td, .ant-table tfoot > tr > th, .ant-table tfoot > tr > td {
+  padding: 8px 6px !important;
+}
+.ant-table-row:hover .ant-table-cell {
+  background: transparent !important;
+}
+.profile-chinese {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 16px;
 }

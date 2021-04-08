@@ -36,20 +36,20 @@ const menu = (
 export default function Navberger() {
 	return (
 		<React.Fragment>
-				<div className="nav-div">
-					<div className="nav-logo">
-						<a href="/">
-							<img src="/assets/images/logo-type.png" />
-						</a>
-					</div>
-					<div className="berger-menu">
-						<Dropdown overlay={menu} trigger={[ 'click' ]}>
-							<a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
-								<img src="/assets/images/bars-round.png" />
-							</a>
-						</Dropdown>
-					</div>
+			<div className="nav-div">
+				<div className="nav-logo">
+					<a href="/">
+						<img src="/assets/images/logo-type.png" />
+					</a>
 				</div>
+				<div className="berger-menu">
+					<Dropdown overlay={menu} trigger={[ 'click' ]}>
+						<a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+							<img src="/assets/images/bars-round.png" />
+						</a>
+					</Dropdown>
+				</div>
+			</div>
 		</React.Fragment>
 	);
 }
