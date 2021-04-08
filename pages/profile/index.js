@@ -2,11 +2,11 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-06 22:08:41
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-08 14:04:07
+ * @LastEditTime: 2021-04-08 14:27:56
  * @FilePath: \sw-chunyang\pages\profile\index.js
  */
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Radio, Table } from 'antd';
+import { Row, Col, Radio, Table, BackTop } from 'antd';
 import Navbar from '../components/navbar';
 import Navberger from '../components/navberger';
 
@@ -535,6 +535,10 @@ export default function Profile() {
 					</a>
 				</i>
 			</div>
+
+			<BackTop>
+				<h1>^</h1>
+			</BackTop>
 		</React.Fragment>
 	);
 }

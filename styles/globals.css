@@ -380,6 +380,11 @@ a {
 }
 
 /* profile */
+.ant-back-top h1 {
+	color: #f63e2c !important;
+	font-family: 'Ageo' !important;
+	text-align: center;
+}
 .fix-top {
 	position: fixed;
 	top: 0;
