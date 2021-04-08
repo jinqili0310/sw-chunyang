@@ -6,7 +6,7 @@
  * @FilePath: \sw-chunyang\pages\components\navberger.js
  */
 import React, { useState } from 'react';
-import { Menu, Dropdown, Affix } from 'antd';
+import { Menu, Dropdown } from 'antd';
 
 const menu = (
 	<Menu>
@@ -34,10 +34,8 @@ const menu = (
 );
 
 export default function Navberger() {
-    const [top, setTop] = useState(0);
 	return (
 		<React.Fragment>
-			<Affix offsetTop={top}>
 				<div className="nav-div">
 					<div className="nav-logo">
 						<a href="/">
@@ -52,7 +50,6 @@ export default function Navberger() {
 						</Dropdown>
 					</div>
 				</div>
-			</Affix>
 		</React.Fragment>
 	);
 }

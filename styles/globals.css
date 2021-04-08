@@ -347,9 +347,19 @@ a {
 	float: right;
 	padding: 1em 0 0 0 !important;
 }
+.ant-dropdown {
+  top: 70px !important;
+  background: url("/assets/images/background.png") no-repeat center center fixed !important;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  padding-left: 1em !important;
+}
 .ant-dropdown-menu {
-	background-color: transparent !important;
+  display: block;
 	box-shadow: none !important;
+  background:transparent !important;
 }
 .ant-dropdown-menu li:nth-child(odd) a {
 	color: #feb620;
@@ -359,6 +369,21 @@ a {
 }
 
 /* profile */
+.fix-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  z-index: 100;
+  display: block;
+  height: 90px;
+  background: url("/assets/images/background.png") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 .profile-top {
 	margin-top: 100px;
 }
@@ -445,7 +470,6 @@ a {
 }
 @media (max-width: 479px) {
 	.profile-top {
-		margin-top: 120px;
 		margin-bottom: 20px;
 	}
 	.title-kr {

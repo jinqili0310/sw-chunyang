@@ -2,17 +2,14 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-06 22:13:58
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-07 00:55:19
+ * @LastEditTime: 2021-04-07 18:38:34
  * @FilePath: /sw-chunyang/pages/components/navbar.js
  */
 import React, { useState } from 'react';
-import { Affix } from 'antd';
 
 export default function Navbar() {
-    const [top, setTop] = useState(0);
 	return (
 		<React.Fragment>
-			<Affix offsetTop={top}>
 				<div className="nav-div">
 					<div className="nav-logo">
 						<a href="/">
@@ -34,7 +31,6 @@ export default function Navbar() {
 						</a>
 					</div>
 				</div>
-			</Affix>
 		</React.Fragment>
 	);
 }
