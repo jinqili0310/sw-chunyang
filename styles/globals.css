@@ -658,7 +658,7 @@ a {
   padding-bottom: 100%;
 }
 .memory-source img {
-  position: absolute; /* Take your picture out of the flow */
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -667,4 +667,5 @@ a {
   height: 100%; 
   object-fit: cover; 
   object-position: center;
+  border-radius: 10px;
 }
