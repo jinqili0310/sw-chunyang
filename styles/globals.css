@@ -3,24 +3,29 @@
 @font-face {
 	font-family: 'Adlinnaka';
 	src: url("/assets/fonts/Adlinnaka-BoldDemo.ttf");
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Ageo';
 	src: url("/assets/fonts/AgeoPersonalUse-Medium.otf");
 	font-weight: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Ageo';
 	src: url("/assets/fonts/AgeoPersonalUse-Bold.otf");
 	font-weight: bold;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Iropke Batang';
 	src: url("/assets/fonts/IropkeBatangM.ttf");
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Andalusia';
 	src: url("/assets/fonts/Andalusia.ttf");
+	font-display: swap;
 }
 
 html,
