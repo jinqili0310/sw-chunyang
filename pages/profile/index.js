@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-06 22:08:41
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-08 08:22:26
+ * @LastEditTime: 2021-04-08 14:04:07
  * @FilePath: \sw-chunyang\pages\profile\index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -524,7 +524,17 @@ export default function Profile() {
 				</Row>
 			</div>
 
-            <div style={{fontSize: "8px", textAlign: "center"}}><i>Reference: <a style={{color: "#000", textDecoration: "underline"}} href="https://namu.wiki/w/%EC%84%A0%EC%9A%B0(%EB%8D%94%EB%B3%B4%EC%9D%B4%EC%A6%88)">Namu Wiki</a></i></div>
+			<div style={{ fontSize: '10px', textAlign: 'center', paddingBottom: '10px' }}>
+				<i>
+					Reference:{' '}
+					<a
+						style={{ color: '#000', textDecoration: 'underline' }}
+						href="https://namu.wiki/w/%EC%84%A0%EC%9A%B0(%EB%8D%94%EB%B3%B4%EC%9D%B4%EC%A6%88)"
+					>
+						Namu Wiki
+					</a>
+				</i>
+			</div>
 		</React.Fragment>
 	);
 }
