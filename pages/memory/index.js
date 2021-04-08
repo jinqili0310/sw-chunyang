@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-07 22:13:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-07 23:50:10
- * @FilePath: /sw-chunyang/pages/memory/index.js
+ * @LastEditTime: 2021-04-08 08:28:45
+ * @FilePath: \sw-chunyang\pages\memory\index.js
  */
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
@@ -43,7 +43,7 @@ export default function Memory() {
 			<div className="fix-content memory-fix">
 				<div className="memory-top">
 					<img src="/assets/images/memory-circle.png" />
-					<div className="memory-dash"> </div>
+					<div className="memory-dash"> &nbsp; </div>
 				</div>
 				<div className="memory-item">
 					<div className="memory-date">

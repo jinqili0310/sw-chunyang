@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-06 22:08:41
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-07 23:41:47
- * @FilePath: /sw-chunyang/pages/profile/index.js
+ * @LastEditTime: 2021-04-08 08:22:26
+ * @FilePath: \sw-chunyang\pages\profile\index.js
  */
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Radio, Table } from 'antd';

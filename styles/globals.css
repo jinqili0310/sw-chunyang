@@ -7,12 +7,12 @@
 @font-face {
 	font-family: 'Ageo';
 	src: url("/assets/fonts/AgeoPersonalUse-Medium.otf");
-  font-weight: normal;
+	font-weight: normal;
 }
 @font-face {
 	font-family: 'Ageo';
 	src: url("/assets/fonts/AgeoPersonalUse-Bold.otf");
-  font-weight: bold;
+	font-weight: bold;
 }
 @font-face {
 	font-family: 'Iropke Batang';
@@ -604,67 +604,73 @@ a {
 .memory-dash {
 	height: 15vw;
 	margin-left: 12.5%;
-	border-left: dashed #f63e2c 2px;
+	border-left: dotted #f63e2c 4px;
 }
 .memory-date span {
 	display: inline-block;
 }
 .memory-left {
-  text-align: center;
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 500;
-  font-size: 20px;
-  color: #feb620;
-  margin: 0 auto;
-  width: 25%;
-  display: inline-block;
+	text-align: center;
+	font-family: 'Noto Serif TC', serif;
+	font-weight: 500;
+	font-size: 20px;
+	color: #feb620;
+	margin: 0 auto;
+	width: 25%;
+	display: inline-block;
 }
 .memory-left span {
-  text-align: right;
+	text-align: right;
 }
 .memory-left div {
-  color: #f63e2c;
-  font-size: 12px;
-  line-height: 12px;
+	color: #f63e2c;
+	font-size: 12px;
+	line-height: 12px;
 }
 .memory-right {
-  color: #f63e2c;
-  font-family: 'Ageo';
-  font-weight: bold;
-  font-size: 20px;
-  display: inline-block;
-  padding-left: 1em;
+	color: #f63e2c;
+	font-family: 'Ageo';
+	font-weight: bold;
+	font-size: 20px;
+	display: inline-block;
+	padding-left: 1em;
 }
 .memory-source {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-left: 12.5%;
-  border-left: dashed #f63e2c 2px;
-  padding-top: 2em;
-  margin-right: 5%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-left: 12.5%;
+	border-left: dotted #f63e2c 4px;
+	padding-top: 2em;
+	margin-right: 1vw;
+	padding-left: 1vw;
 }
 .memory-img {
-  position: relative;
-  width: 25%;
-  min-width: 120px;
-  border: #feb620 1.5vw solid;
-  border-radius: 10px;
-  margin: 0 1vw 1vw 1vw;
+	position: relative;
+	width: 25%;
+	min-width: 120px;
+	/* border: #feb620 1.5vw solid; */
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	margin: 3vw 2vw;
+	box-shadow: 0 0 0 2vw #feb620;
 }
 .memory-img:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+	content: "";
+	display: block;
+	padding-bottom: 100%;
 }
 .memory-source img {
-  position: absolute; /* Take your picture out of the flow */
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%; 
-  object-fit: cover; 
-  object-position: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 10px;
 }
