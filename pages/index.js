@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 1985-10-26 01:15:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-06 20:12:15
- * @FilePath: /sw-chunyang/pages/index.js
+ * @LastEditTime: 2021-04-08 14:26:54
+ * @FilePath: \sw-chunyang\pages\index.js
  */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';

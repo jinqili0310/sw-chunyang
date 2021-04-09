@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 1985-10-26 01:15:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-07 13:21:15
+ * @LastEditTime: 2021-04-08 14:25:03
  * @FilePath: \sw-chunyang\pages\_app.js
  */
 import React, { useEffect } from 'react';
@@ -12,7 +12,6 @@ import '../styles/globals.css';
 import 'antd/dist/antd.css';
 import { useRouter } from 'next/router';
 import * as gtag from '../lib/gtag';
-
 const App = ({ Component, pageProps }) => {
 	const router = useRouter();
 	useEffect(
@@ -34,6 +33,7 @@ const App = ({ Component, pageProps }) => {
 				<title>ChunYang - Happy SUNWOO Day</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+
 			<Component {...pageProps} />
 		</React.Fragment>
 	);
