@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-06 22:22:46
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-07 11:02:43
- * @FilePath: \sw-chunyang\pages\components\navberger.js
+ * @LastEditTime: 2021-04-10 13:20:19
+ * @FilePath: /sw-chunyang/pages/components/navberger.js
  */
 import React, { useState } from 'react';
 import { Menu, Dropdown } from 'antd';
@@ -21,7 +21,7 @@ const menu = (
 			</a>
 		</Menu.Item>
 		<Menu.Item key="2">
-			<a className="berger-link" href="/photo">
+			<a className="berger-link" href="/photo-playlist">
 				Photo Playlist
 			</a>
 		</Menu.Item>

@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-07 22:13:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-10 12:55:23
+ * @LastEditTime: 2021-04-10 13:14:32
  * @FilePath: /sw-chunyang/pages/memory/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -37,12 +37,12 @@ function useWindowSize() {
 
 export default function Memory() {
 	const size = useWindowSize();
-	const [ iphone, setIphone ] = useState("");
-	(typeof window !== 'undefined')? 
-		(navigator.platform.toUpperCase() == 'IPHONE' ? 
-		useEffect(()=>setIphone("iphone-dash"),[]) : useEffect(()=>setIphone("other-dash"),[]) )
-		: null
-	
+	const [ iphone, setIphone ] = useState('');
+	// typeof window !== 'undefined'
+	// 	? navigator.platform.toUpperCase() == 'IPHONE'
+	// 		? useEffect(() => setIphone('iphone-dash'), [])
+	// 		: useEffect(() => setIphone('other-dash'), [])
+	// 	: null;
 
 	return (
 		<React.Fragment>

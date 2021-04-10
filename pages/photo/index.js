@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:27:05
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-09 12:27:05
- * @FilePath: \sw-chunyang\pages\photo\index.js
+ * @LastEditTime: 2021-04-10 14:04:47
+ * @FilePath: /sw-chunyang/pages/photo/index.js
  */
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
@@ -41,6 +41,7 @@ export default function Photo(){
     return (
         <React.Fragment>
             <div className="fix-top">{size.width > 839 ? <Navbar /> : <Navberger />}</div>
+			
         </React.Fragment>
     )
 }

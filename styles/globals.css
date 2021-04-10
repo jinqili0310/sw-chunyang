@@ -43,6 +43,9 @@ body {
 	-o-background-size: cover;
 	background-size: cover; */
 }
+body {
+	height: auto !important;
+}
 
 a {
 	color: inherit;
@@ -364,7 +367,7 @@ a {
 	padding: 1em 0 0 0 !important;
 }
 .ant-dropdown {
-	background: url("/assets/images/background.jpg") no-repeat !important;
+	background: url("/assets/images/background.jpg") no-repeat center !important;
 	padding-left: 1em !important;
 	padding-bottom: 1em !important;
 	border-radius: 10px;
@@ -401,10 +404,10 @@ a {
 	height: 90px;
 	width: 100vw;
 	background: url("/assets/images/background.jpg") no-repeat;
-	-webkit-background-size: cover;
+	/* -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: cover; */
 }
 .profile-top {
 	/* margin-top: 100px; */
@@ -631,18 +634,20 @@ a {
 }
 .memory-dash {
 	height: 15vw;
+	margin-left: 10%;
+	border-left: 4px dotted #f63e2c;
 }
-.other-dash {
+/* .other-dash {
 	margin-left: 12.5%;
 	border-left: 4px dotted #f63e2c;
 }
 .iphone-dash {
 	margin-left: 10%;
 	border-left: 4px dotted #f63e2c;
-	/* margin-left: 0;
+	margin-left: 0;
 	-webkit-border-after: 4px dotted #f63e2c;
-	writing-mode: vertical-rl; */
-}
+	writing-mode: vertical-rl; 
+} */
 .memory-date {
 	margin: 0 0 3em 0;
 }
@@ -682,6 +687,8 @@ a {
 .memory-source {
 	padding-top: 2em;
 	padding-left: 1vw;
+	margin-left: 10%;
+	border-left: 4px dotted #f63e2c;
 	/* border-image: url("/assets/images/dot.png") repeat;
 	border-width: 0 0 0 5px;
 	border: solid transparent; */
@@ -784,4 +791,38 @@ iframe[src*="vimeo.com"] {
 .memory-date a:visited {
 	color: #feb620;
 	text-decoration: underline !important;
+}
+
+/* photo-playlist */
+.double-col {
+	text-align: center;
+	padding: 10%;
+	position: relative;
+}
+.double-menu {
+	padding-top: 2%;
+}
+.double-col img:nth-child(1) {
+	max-width: 300px !important;
+	width: 80%;
+	z-index: 10;
+	position: relative;
+}
+.double-col img:nth-child(2) {
+	display: none;
+	max-width: 250px;
+	width: 60%;
+	z-index: 5;
+	position: absolute;
+	box-sizing: border-box;
+}
+.col-left:hover img:nth-child(2) {
+	display: block;
+	left: 5vw;
+	bottom: 5vw;
+}
+.col-right:hover img:nth-child(2) {
+	display: block;
+	right: 10vw;
+	top: 5vw;
 }
