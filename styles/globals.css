@@ -400,7 +400,7 @@ a {
 	display: block;
 	height: 90px;
 	width: 100vw;
-	background: url("/assets/images/background.jpg") no-repeat center center fixed;
+	background: url("/assets/images/background.jpg") no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -430,6 +430,13 @@ a {
 	}
 	html,
 	body {
+		background: url("/assets/images/background.jpg") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	.fix-top {
 		background: url("/assets/images/background.jpg") no-repeat center center fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -624,8 +631,17 @@ a {
 }
 .memory-dash {
 	height: 15vw;
+}
+.other-dash {
 	margin-left: 12.5%;
-	border-left: dotted #f63e2c 4px;
+	border-left: 4px dotted #f63e2c;
+}
+.iphone-dash {
+	margin-left: 10%;
+	border-left: 4px dotted #f63e2c;
+	/* margin-left: 0;
+	-webkit-border-after: 4px dotted #f63e2c;
+	writing-mode: vertical-rl; */
 }
 .memory-date {
 	margin: 0 0 3em 0;
@@ -660,9 +676,10 @@ a {
 	padding-left: 1em;
 	word-wrap: normal;
 }
+/* .memory-item {
+	padding-left: 10%;
+} */
 .memory-source {
-	margin-left: 12.5%;
-	border-left: dotted #f63e2c 4px;
 	padding-top: 2em;
 	padding-left: 1vw;
 	/* border-image: url("/assets/images/dot.png") repeat;
@@ -685,7 +702,7 @@ a {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-khtml-border-radius: 10px;
-	margin: 3vw 2vw;
+	margin: 3vw 2vw !important;
 	box-shadow: 0 0 0 2vw #feb620;
 }
 .memory-img:after {
@@ -725,7 +742,18 @@ a {
 	width: 20px;
 }
 .ant-back-top {
-	text-align: right;
+	text-align: center;
+	right: 20px !important;
+}
+@media screen and (max-width: 768px) {
+	.ant-back-top {
+		text-align: right;
+	}
+}
+@media screen and (max-width: 480px) {
+	.ant-back-top {
+		right: 10px !important;
+	}
 }
 .source-vid {
 	/* width: 90%; */

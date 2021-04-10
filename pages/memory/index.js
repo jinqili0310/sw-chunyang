@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-07 22:13:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-09 00:29:23
+ * @LastEditTime: 2021-04-10 12:55:23
  * @FilePath: /sw-chunyang/pages/memory/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -37,6 +37,12 @@ function useWindowSize() {
 
 export default function Memory() {
 	const size = useWindowSize();
+	const [ iphone, setIphone ] = useState("");
+	(typeof window !== 'undefined')? 
+		(navigator.platform.toUpperCase() == 'IPHONE' ? 
+		useEffect(()=>setIphone("iphone-dash"),[]) : useEffect(()=>setIphone("other-dash"),[]) )
+		: null
+	
 
 	return (
 		<React.Fragment>
@@ -44,7 +50,7 @@ export default function Memory() {
 			<div className="fix-content memory-fix">
 				<div className="memory-top">
 					<img src="/assets/images/memory-circle.png" />
-					<div className="memory-dash"> &nbsp; </div>
+					<div className={`memory-dash ${iphone}`}> &nbsp;</div>
 				</div>
 				<div className="memory-item">
 					<div className="memory-date">
@@ -54,7 +60,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Happy Birthday!</div>
-						<div className="memory-source source-img">
+						<div className={`memory-source source-img ${iphone}`}>
 							{/* <div className="memory-dash" style={{ height: '60vh', display: 'inline-block' }}>
 								{' '}
 							</div> */}
@@ -85,7 +91,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">High School Rapper</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/U_CNYRFZSuo"
@@ -103,7 +109,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">TRAINEE PAPARAZZI</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/e9h7kdIwIpU"
@@ -113,7 +119,7 @@ export default function Memory() {
 								/>
 							</div>
 						</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/Pjy3VfVB_3A"
@@ -131,7 +137,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">DAZED PROFILE FILM</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/DgQfiO0PzUA"
@@ -141,7 +147,7 @@ export default function Memory() {
 								/>
 							</div>
 						</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/JKqkVvD4xiM"
@@ -159,7 +165,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">OPEN THE BOYZ</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/EEWYfCrenIA"
@@ -177,7 +183,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">THE BOYZ Debut</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="source-awd">
 								<a href="https://www.vlive.tv/post/0-18322984" target="__blank">
 									THE BOYZ - 소년 (boy) @ Debut Showcase
@@ -200,7 +206,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">GIDDY UP</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/DNH7X46gMjQ"
@@ -218,7 +224,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">KeePer</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/oR-QJtmn6ww"
@@ -236,7 +242,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">DAZED scene of SPHERE</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/qzxg-ve7C-8"
@@ -254,7 +260,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Soribada Best K-Music Awards</div>
-						<div className="memory-source source-awd">New Hallyu Rookie Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>New Hallyu Rookie Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -263,7 +269,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">RIGHT HERE</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/JSEQiv5Z7p4"
@@ -281,7 +287,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Asia Artist Awards</div>
-						<div className="memory-source source-awd">Male Rookie of the Year Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Male Rookie of the Year Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -290,7 +296,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">NO AIR</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/8n6pRkpVsyU"
@@ -308,7 +314,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Melon Music Awards</div>
-						<div className="memory-source source-awd">Best New Male Artist Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Best New Male Artist Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -317,7 +323,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">MAMA Colab Stage</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/gj8gSfYBPPc"
@@ -335,7 +341,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Korea Popular Music Awards</div>
-						<div className="memory-source source-awd">Rookie of the Year Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Rookie of the Year Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -344,7 +350,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Gaon Chart Music Awards</div>
-						<div className="memory-source source-awd">World Rookie of the Year Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>World Rookie of the Year Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -353,7 +359,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Fan-Con</div>
-						<div className="memory-source source-awd">
+						<div className={`memory-source source-awd ${iphone}`}>
 							THE BOYZ FIRST FAN-CON <i>THE CASTLE</i>
 						</div>
 					</div>
@@ -364,7 +370,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Birthday VLIVE</div>
-						<div className="memory-source source-awd">
+						<div className={`memory-source source-awd ${iphone}`}>
 							<a href="https://www.vlive.tv/post/0-18322635" target="__blank">
 								HAPPY SUNWOO DAY ♡
 							</a>
@@ -377,7 +383,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">The Fact Music Awards</div>
-						<div className="memory-source source-awd">Next Leader Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Next Leader Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -386,7 +392,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Bloom Bloom</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/Ty_3Vyqrlr4"
@@ -404,7 +410,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">THE BOYZ First Win</div>
-						<div className="memory-source source-awd">
+						<div className={`memory-source source-awd ${iphone}`}>
 							<p>Bloom Bloom @ The Show</p>
 							<p style={{ marginBottom: '0' }}>
 								<a href="https://www.vlive.tv/post/0-18322615" target="__blank">
@@ -420,7 +426,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Video Music Awards Japan</div>
-						<div className="memory-source source-awd">Rising Star Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Rising Star Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -429,7 +435,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">D.D.D</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/bTTczRe-Pj0"
@@ -447,7 +453,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Soribada Best K-Music Awards</div>
-						<div className="memory-source source-awd">Rising Hot Star Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Rising Hot Star Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -456,7 +462,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">TATTOO</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/zCyZ5TtlW4Q"
@@ -480,7 +486,7 @@ export default function Memory() {
 								Korea Culture and<br /> Entertainment Awards
 							</div>
 						)}
-						<div className="memory-source source-awd">Rising Hot Star Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Rising Hot Star Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -489,7 +495,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Melon Music Awards</div>
-						<div className="memory-source source-awd">
+						<div className={`memory-source source-awd ${iphone}`}>
 							<span style={{ fontFamily: 'Montserrat', fontWeight: '500' }}>1</span>theK Performance Award
 						</div>
 					</div>
@@ -500,7 +506,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">WHITE</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/_VSS0Twtn58"
@@ -518,7 +524,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Concert</div>
-						<div className="memory-source source-awd">
+						<div className={`memory-source source-awd ${iphone}`}>
 							THE BOYZ FIRST EUROPE TOUR <i>[DREAMLIKE]</i>
 						</div>
 					</div>
@@ -529,7 +535,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">REVEAL</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/PugZA26sj-8"
@@ -547,7 +553,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Japan Gold Disc Awards</div>
-						<div className="memory-source source-awd">
+						<div className={`memory-source source-awd ${iphone}`}>
 							Best <span style={{ fontFamily: 'Montserrat', fontWeight: '500' }}>3</span> New Artists
 							(Asia) Award
 						</div>
@@ -559,7 +565,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">The Fact Music Awards</div>
-						<div className="memory-source source-awd">Danceperformer of the Year Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Danceperformer of the Year Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -568,7 +574,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Birthday VLIVE</div>
-						<div className="memory-source source-awd">
+						<div className={`memory-source source-awd ${iphone}`}>
 							<a href="https://www.vlive.tv/post/0-18322362" target="__blank">
 								Sun 탄생일 🌞🎂
 							</a>
@@ -581,7 +587,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">GENERATION Z</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/CcIJc93D42Y"
@@ -599,7 +605,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">GENERATION Z : SUNWOO</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/xKsvrQYy_14"
@@ -617,7 +623,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Road to Kingdom: Final Win</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/Km2xdEaYyjI"
@@ -642,7 +648,7 @@ export default function Memory() {
 						<div className="memory-right">
 							A to BOYZ: <span style={{ fontFamily: 'Montserrat', fontWeight: '600' }}>100</span> Degrees
 						</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/Ftpxg88pC2I"
@@ -660,7 +666,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Soribada Best K-Music Awards</div>
-						<div className="memory-source source-awd">New Hallyu Male Performance Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>New Hallyu Male Performance Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -669,7 +675,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Concert</div>
-						<div className="memory-source source-awd">
+						<div className={`memory-source source-awd ${iphone}`}>
 							<p>
 								THE BOYZ FIRST ONLINE CONCERT <i>[RE:AL]</i>
 							</p>
@@ -687,7 +693,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">The Stealer</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/c_e-IC0VwZM"
@@ -705,7 +711,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">The Stealer First Win</div>
-						<div className="memory-source source-awd">@ Show Champion</div>
+						<div className={`memory-source source-awd ${iphone}`}>@ Show Champion</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -714,7 +720,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">The Stealer Win</div>
-						<div className="memory-source source-awd">@ M Countdown</div>
+						<div className={`memory-source source-awd ${iphone}`}>@ M Countdown</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -723,7 +729,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">The Stealer Win</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/IZkgdqdJNEs"
@@ -741,7 +747,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">The Stealer Win</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/wM8CJSWFZgc"
@@ -759,7 +765,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Asia Artist Awards</div>
-						<div className="memory-source source-awd">AAA Best Choice</div>
+						<div className={`memory-source source-awd ${iphone}`}>AAA Best Choice</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -768,7 +774,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">SoundCloud</div>
-						<div className="memory-source source-awd">광합성 (Prod. CyA) by SUNWOO</div>
+						<div className={`memory-source source-awd ${iphone}`}>광합성 (Prod. CyA) by SUNWOO</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -777,7 +783,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Melon Music Awards</div>
-						<div className="memory-source source-awd">
+						<div className={`memory-source source-awd ${iphone}`}>
 							<span style={{ fontFamily: 'Montserrat', fontWeight: '500' }}>1</span>theK Original Content
 							Award
 						</div>
@@ -789,7 +795,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Fan-Con</div>
-						<div className="memory-source source-awd">
+						<div className={`memory-source source-awd ${iphone}`}>
 							THE BOYZ FAN-CON <i>THE FILM FESTIVAL</i>
 						</div>
 					</div>
@@ -800,7 +806,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Christmassy!</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/lVDYdpl2sGI"
@@ -818,7 +824,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">The Fact Music Awards </div>
-						<div className="memory-source source-awd">Global Hottest Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Global Hottest Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -827,7 +833,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">First OST - Priority (Run On OST)</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/iN6xkOpNkeU"
@@ -845,7 +851,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Golden Disk Awards</div>
-						<div className="memory-source source-awd">Next Generation Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Next Generation Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -854,7 +860,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">APAN Music Awards</div>
-						<div className="memory-source source-awd">Next Generation Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Next Generation Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -863,7 +869,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Seoul Music Awards</div>
-						<div className="memory-source source-awd">Best Performance Award</div>
+						<div className={`memory-source source-awd ${iphone}`}>Best Performance Award</div>
 					</div>
 					<div className="memory-date">
 						<div className="memory-left">
@@ -872,7 +878,7 @@ export default function Memory() {
 							</span>
 						</div>
 						<div className="memory-right">Breaking Dawn</div>
-						<div className="memory-source source-vid">
+						<div className={`memory-source source-vid ${iphone}`}>
 							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
 								<iframe
 									src="https://www.youtube.com/embed/rsXWBjGcOUc"
