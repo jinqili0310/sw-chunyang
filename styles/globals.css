@@ -788,7 +788,7 @@ iframe[src*="youtube-nocookie.com"],
 iframe[src*="vimeo.com"] {
 	width: 100%;
 	height: auto;
-	aspect-ratio: 560/315 !important;
+	/* aspect-ratio: 560/315 !important; */
 }
 .memory-date a,
 .memory-date a:hover,
@@ -815,7 +815,7 @@ iframe[src*="vimeo.com"] {
 }
 .double-col img:nth-child(2) {
 	display: none;
-	max-width: 250px;
+	/* max-width: 250px; */
 	width: 60%;
 	z-index: 5;
 	position: absolute;
@@ -836,7 +836,7 @@ iframe[src*="vimeo.com"] {
 .ant-pagination-options {
 	display: none !important;
 }
-.ant-card-body {
+.img-card .ant-card-body {
 	display: none !important;
 }
 .twi-src {
@@ -946,11 +946,11 @@ iframe[src*="vimeo.com"] {
 		width: 100px !important;
 		aspect-ratio: 560/315;
 	}
-	.player-fix img{
+	.player-fix img {
 		width: 80% !important;
 	}
 	.player-fix iframe {
-		width:64% !important;
+		width: 64% !important;
 		top: 35% !important;
 	}
 }
@@ -961,11 +961,11 @@ iframe[src*="vimeo.com"] {
 		aspect-ratio: 560/315; */
 		display: none !important;
 	}
-	.player-fix img{
+	.player-fix img {
 		width: 80% !important;
 	}
 	.player-fix iframe {
-		width:64% !important;
+		width: 64% !important;
 		top: 35% !important;
 	}
 }
@@ -976,11 +976,11 @@ iframe[src*="vimeo.com"] {
 	.playlist-card img {
 		display: none !important;
 	}
-	.player-fix img{
+	.player-fix img {
 		width: 80% !important;
 	}
 	.player-fix iframe {
-		width:64% !important;
+		width: 64% !important;
 		top: 35% !important;
 	}
 }
@@ -1003,7 +1003,7 @@ iframe[src*="vimeo.com"] {
 	display: inline-block;
 	/* width: calc(100% - 200px); */
 	padding-left: 2.5em;
-	padding-right: 2em; 
+	padding-right: 2em;
 	font-family: 'Montserrat', sans-serif;
 }
 .playlist-card:nth-child(odd) p {
@@ -1020,16 +1020,11 @@ iframe[src*="vimeo.com"] {
 	z-index: 50;
 	position: fixed;
 	width: 100%;
-	height: auto;
+	min-height: 30vh;
 	background: url("/assets/images/background.jpg") fixed;
 	padding-bottom: 5%;
 }
-.play-top div {
-	width: 50%;
-	position: relative;
-	margin: 0 auto;
-}
-.play-top > div > img {
+/* .play-top > div > img {
 	width: 100%;
 	position: absolute;
 	left: 0;
@@ -1037,28 +1032,58 @@ iframe[src*="vimeo.com"] {
 	top: 0;
 	margin: auto;
 	z-index: 10;
+} */
+.play-flex {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
 }
-.play-top > div > iframe {
-	z-index: 5;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 44%;
+.player-outer {
+	/* z-index: 5; */
 	margin: auto;
-	width: 86%;
+	width: 85%;
+	/* height: 60%; */
+	overflow: hidden;
+	margin-top: 3vw;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	box-shadow: 0 0 0 3vw #feb620;
+	padding-top: 40%;
+	object-fit: cover;
+	position: relative;
+	/* width: 300px;
+	height: 322px;
+	border-image-slice:205 131 65 43;border-image-width:147px 97px 49px 32px;border-image-outset:0px 0px 0px 0px;border-image-repeat:stretch stretch;
+	border-image-source: url("/assets/images/TV.png"); */
+}
+.player-outer > iframe {
+	/* height: 100%; */
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	height: 100%;
 }
 .play-bottom {
-	padding-top: calc(90px + 45%)
+	padding-top: calc(90px + 40%);
 }
 .bottom-list {
 	list-style: none;
-	margin: 2% auto;
-	padding: 0 2% 2% 5%;
+	margin: 2%;
+	/* padding: 0 2% 2% 5%; */
+	border: 2px dashed #feb620;
+	padding: 1em 1em .5em 1em;
+	border-radius: 10px;
+	overflow: hidden;
 }
 .bottom-card {
 	display: flex;
 	align-items: center;
-	margin-bottom: 2em;
+	padding: 1em 0;
+	border-bottom: 2px dashed #feb620;
 }
 .bottom-card img {
 	width: 140px;
@@ -1066,15 +1091,119 @@ iframe[src*="vimeo.com"] {
 	display: inline-block;
 }
 .bottom-card p {
-	font-size: 16px;
+	font-size: 14px;
 	display: inline-block;
 	padding-left: 1em;
 	/* padding-right: 1em;  */
 	font-family: 'Montserrat', sans-serif;
 }
-.bottom-card:nth-child(odd) p {
+.bottom-card p {
 	color: #f63e2c;
 }
-.bottom-card:nth-child(even) p {
+
+/* message */
+.message-title {
+	width: 80%;
+	margin: 5% auto;
+}
+.message-title h1 {
+	font-family: "Ageo";
+	font-weight: bold;
+	color: #f63e2c;
+}
+.message-title > h1 > span {
 	color: #feb620;
+}
+.message-form .ant-input {
+	border: 2px solid #f63e2c;
+	border-radius: 10px;
+}
+.message-form .ant-form-item:not(:nth-child(1)) {
+	display: inline-block;
+}
+.message-form button.ant-btn.ant-btn-primary,
+.message-form button.ant-btn.ant-btn-primary:hover,
+.message-form button.ant-btn.ant-btn-primary:active,
+.message-form button.ant-btn.ant-btn-primary:focus {
+	background: transparent;
+	border: none;
+	width: 100px;
+	text-shadow: none;
+	box-shadow: none;
+}
+.message-form button.ant-btn.ant-btn-primary span {
+	color: #f63e2c;
+	font-family: "Ageo";
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.message-form textarea#content,
+.message-form textarea#content:hover,
+.message-form textarea#content:active,
+.message-form textarea#content:focus,
+.message-form input#username,
+.message-form input#username:hover,
+.message-form input#username:active,
+.message-form input#username:focus {
+	font-family: 'Montserrat', sans-serif;
+	border: 2px solid #f63e2c;
+	border-radius: 10px;
+	text-shadow: none;
+	box-shadow: none;
+}
+.message-form .ant-form-item-explain.ant-form-item-explain-error {
+	color: #f63e2c;
+	font-family: "Ageo";
+}
+.message-form textarea.ant-input {
+	min-height: 100px;
+}
+.message-div {
+	margin: 0 10%;
+}
+@media (min-width: 840px) {
+	.message-left {
+		position: fixed;
+		height:auto;
+		width: 50%;
+	}
+}
+@media (max-width:839px) {
+	.message-left {
+		background: url("/assets/images/background.jpg") no-repeat;
+		z-index: 100;
+		position: fixed;
+		height:auto;
+		width: 100%;
+	}
+	.fix-message {
+		margin-top: 89px;
+	}
+	.fetch-comment {
+		margin-top: calc(90px + 30vh) !important;
+	}
+}
+.fetch-comment {
+	width: 80%;
+	margin: 5% auto;
+}
+.fetch-comment .ant-card.ant-card-bordered {
+	border: 2px solid #f63e2c;
+	border-radius: 10px;
+}
+.fetch-comment .ant-card-head-title{
+	padding: 6px 12px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+}
+.fetch-comment .ant-card-body {
+	padding: 6px 12px;
+	font-family: 'Montserrat', sans-serif;
+}
+.fetch-comment .ant-card-head {
+	padding: 0;
+	min-height: none;
+}
+.fetch-comment .ant-card-head::after{
+	display: none;
 }

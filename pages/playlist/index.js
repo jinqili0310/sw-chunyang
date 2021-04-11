@@ -2,13 +2,13 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:28:13
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 01:51:42
+ * @LastEditTime: 2021-04-11 11:48:19
  * @FilePath: /sw-chunyang/pages/playlist/index.js
  */
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
 import Navberger from '../components/navberger';
-import { Row, Col, Radio } from 'antd';
+import { Row, Col, Radio, BackTop } from 'antd';
 
 export async function getServerSideProps() {
 	const res = await fetch(
@@ -161,16 +161,17 @@ export default function Playlist({ data, dataTwo }) {
 			) : (
 				<div className="top-bottom fix-content">
 					<div className="play-top">
-						<div style={{ aspectRatio: '434/466' }} onClick={toggleFullScreen}>
-							<img src="/assets/images/TV.png" />
+						<div className="play-flex">
+						<div className="player-outer" onClick={toggleFullScreen}>
+							{/* <img src="/assets/images/TV.png" /> */}
 							<iframe
-								style={{ aspectRatio: '560/315' }}
 								src={current}
 								id="fullscreenVideo"
 								frameBorder="0"
 								allowFullScreen
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 							/>
+						</div>
 						</div>
 					</div>
 					<div className="play-bottom">
@@ -222,6 +223,11 @@ export default function Playlist({ data, dataTwo }) {
 					</div>
 				</div>
 			)}
+			<BackTop>
+				<span>
+					<img className="top-arrow" src="/assets/images/arrow.png" />
+				</span>
+			</BackTop>
 		</React.Fragment>
 	);
 }

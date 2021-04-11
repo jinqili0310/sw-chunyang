@@ -2,13 +2,16 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:38:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-09 12:38:17
- * @FilePath: \sw-chunyang\pages\message\index.js
+ * @LastEditTime: 2021-04-11 15:01:12
+ * @FilePath: /sw-chunyang/pages/message/index.js
  */
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
 import Navberger from '../components/navberger';
-import { BackTop } from 'antd';
+import { BackTop, Row, Col, Card, List, Button, Skeleton, message, Form, Input } from 'antd';
+import { server } from '../../config';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { useRouter } from 'next/router';
 
 function useWindowSize() {
 	const [ windowSize, setWindowSize ] = useState({
@@ -35,12 +38,150 @@ function useWindowSize() {
 	return windowSize;
 }
 
-export default function Message(){
-    const size = useWindowSize();
+export default function Message({ comments }) {
+	const size = useWindowSize();
+	const router = useRouter();
 
-    return (
-        <React.Fragment>
-            <div className="fix-top">{size.width > 839 ? <Navbar /> : <Navberger />}</div>
-        </React.Fragment>
-    )
+	// const [ count, setCount ] = useState(1);
+	// const [ items, setItems ] = useState(comments.slice(0, 10));
+	const [ more, setMore ] = useState(true);
+
+	// const fetchMoreData = () => {
+	// 	if (comments.length > count * 10) {
+	// 		setMore(true);
+	// 		setCount(count+1);
+	// 		if(comments.length < count * 10) {
+	// 			setItems(comments.slice(0, comments.length-1));
+	// 		} else {
+	// 			setItems(comments.slice(0, 10 * count));
+	// 		}
+	// 	} else {
+	// 		setMore(false);
+	// 	}
+	// };
+
+	const [ isSubmitting, setIsSubmitting ] = useState(false);
+
+	const createComment = async (values) => {
+		console.log(JSON.stringify(values));
+		const res = await fetch(`${server}/api/comments`, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(values)
+		});
+		setIsSubmitting(false);
+		message.success('Message sent success!');
+		router.reload();
+	};
+	const handleSubmit = (values) => {
+		console.log(`values: ${JSON.stringify(values)}`);
+		setIsSubmitting(true);
+		createComment(values);
+	};
+	const onFinishFailed = (errorInfo) => {
+		console.log('Failed:', errorInfo);
+	};
+
+	return (
+		<React.Fragment>
+			<div className="fix-top">{size.width > 839 ? <Navbar /> : <Navberger />}</div>
+			<div className="fix-content fix-message">
+				<Row>
+					<Col xs={24} sm={24} md={12} lg={12} xl={12}>
+						<div className="message-left">
+							<div className="message-title">
+								<h1>
+									MESSAGE {'  '}
+									<span>
+										<img src="/assets/images/heart.png" />
+									</span>
+									<br /> TO <span>SUNWOO</span>
+								</h1>
+							</div>
+							<div className="message-div">
+								{isSubmitting ? (
+									<h4>Sending...</h4>
+								) : (
+									<div className="message-form">
+										<Form onFinish={handleSubmit} onFinishFailed={onFinishFailed}>
+											<Form.Item
+												name="content"
+												rules={[
+													{
+														required: true,
+														message: 'Please input your message content!'
+													}
+												]}
+											>
+												<Input.TextArea placeholder="Message" />
+											</Form.Item>
+
+											<Form.Item
+												name="username"
+												rules={[
+													{
+														required: true,
+														message: 'Please input your name!'
+													}
+												]}
+											>
+												<Input placeholder="Name" />
+											</Form.Item>
+
+											<Form.Item>
+												<Button type="primary" htmlType="submit">
+													SEND
+												</Button>
+											</Form.Item>
+										</Form>
+									</div>
+								)}
+							</div>
+						</div>
+					</Col>
+					<Col xs={24} sm={24} md={12} lg={12} xl={12}>
+						<div className="fetch-comment">
+							{/* <InfiniteScroll
+								dataLength={items.length}
+								next={fetchMoreData}
+								hasMore={more}
+								loader={<h4>Loading...</h4>}
+							> */}
+								{comments.map((item, index) => (
+									<div key={item._id}>
+										{/* <a href={`../${item._id}`}> */}
+										<Card style={{ marginTop: 12 }} title={item.username}>
+											<p>{item.content}</p>
+										</Card>
+										{/* </a> */}
+									</div>
+								))}
+							{/* </InfiniteScroll> */}
+
+							{/* {comments.map((comment) => {
+								return (
+									<div key={comment._id}>
+										<a href={`../${comment._id}`}>
+											<Card style={{ marginTop: 6 }} type="inner" title={comment.username}>
+												{comment.content}
+											</Card>
+										</a>
+									</div>
+								);
+							})} */}
+						</div>
+					</Col>
+				</Row>
+			</div>
+		</React.Fragment>
+	);
 }
+
+Message.getInitialProps = async () => {
+	const res = await fetch(`${server}/api/comments`);
+	const { data } = await res.json();
+	return { comments: data };
+};
