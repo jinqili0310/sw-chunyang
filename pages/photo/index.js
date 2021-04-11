@@ -2,14 +2,14 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:27:05
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-10 17:27:23
+ * @LastEditTime: 2021-04-11 02:13:03
  * @FilePath: /sw-chunyang/pages/photo/index.js
  */
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
 import Navberger from '../components/navberger';
 import { List, Card, Radio } from 'antd';
-import { twitter } from '../components/twitter';
+import { twitter } from '../../public/assets/data/twitter';
 
 function useWindowSize() {
 	const [ windowSize, setWindowSize ] = useState({
