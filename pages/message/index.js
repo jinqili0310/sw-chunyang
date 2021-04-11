@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:38:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 15:12:11
+ * @LastEditTime: 2021-04-11 15:24:50
  * @FilePath: /sw-chunyang/pages/message/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -40,24 +40,6 @@ function useWindowSize() {
 export default function Message({ comments }) {
 	const size = useWindowSize();
 	const router = useRouter();
-
-	// const [ count, setCount ] = useState(1);
-	// const [ items, setItems ] = useState(comments.slice(0, 10));
-	const [ more, setMore ] = useState(true);
-
-	// const fetchMoreData = () => {
-	// 	if (comments.length > count * 10) {
-	// 		setMore(true);
-	// 		setCount(count+1);
-	// 		if(comments.length < count * 10) {
-	// 			setItems(comments.slice(0, comments.length-1));
-	// 		} else {
-	// 			setItems(comments.slice(0, 10 * count));
-	// 		}
-	// 	} else {
-	// 		setMore(false);
-	// 	}
-	// };
 
 	const [ isSubmitting, setIsSubmitting ] = useState(false);
 
@@ -102,7 +84,7 @@ export default function Message({ comments }) {
 							</div>
 							<div className="message-div">
 								{isSubmitting ? (
-									<h4>Sending...</h4>
+									<h4 style={{fontFamily:"Ageo", color: "#feb620"}}>Sending...</h4>
 								) : (
 									<div className="message-form">
 										<Form onFinish={handleSubmit} onFinishFailed={onFinishFailed}>
@@ -143,12 +125,6 @@ export default function Message({ comments }) {
 					</Col>
 					<Col xs={24} sm={24} md={12} lg={12} xl={12}>
 						<div className="fetch-comment">
-							{/* <InfiniteScroll
-								dataLength={items.length}
-								next={fetchMoreData}
-								hasMore={more}
-								loader={<h4>Loading...</h4>}
-							> */}
 								{comments.map((item, index) => (
 									<div key={item._id}>
 										{/* <a href={`../${item._id}`}> */}
@@ -158,19 +134,6 @@ export default function Message({ comments }) {
 										{/* </a> */}
 									</div>
 								))}
-							{/* </InfiniteScroll> */}
-
-							{/* {comments.map((comment) => {
-								return (
-									<div key={comment._id}>
-										<a href={`../${comment._id}`}>
-											<Card style={{ marginTop: 6 }} type="inner" title={comment.username}>
-												{comment.content}
-											</Card>
-										</a>
-									</div>
-								);
-							})} */}
 						</div>
 					</Col>
 				</Row>
@@ -187,5 +150,6 @@ export default function Message({ comments }) {
 Message.getInitialProps = async () => {
 	const res = await fetch(`${server}/api/comments`);
 	const { data } = await res.json();
+	console.log(data)
 	return { comments: data };
 };
