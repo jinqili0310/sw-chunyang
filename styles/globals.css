@@ -1171,17 +1171,18 @@ iframe[src*="vimeo.com"] {
 @media (max-width:839px) {
 	.message-left {
 		background: url("/assets/images/background.jpg") no-repeat;
-		z-index: 100;
-		position: fixed;
+		/* z-index: 100;
+		position: fixed; */
+		position: relative;
 		height:auto;
 		width: 100%;
 	}
-	.fix-message {
+	/* .fix-message {
 		margin-top: 89px;
 	}
 	.fetch-comment {
 		margin-top: calc(90px + 30vh) !important;
-	}
+	} */
 }
 .fetch-comment {
 	width: 80%;

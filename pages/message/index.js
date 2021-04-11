@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:38:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 15:01:12
+ * @LastEditTime: 2021-04-11 15:12:11
  * @FilePath: /sw-chunyang/pages/message/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -10,7 +10,6 @@ import Navbar from '../components/navbar';
 import Navberger from '../components/navberger';
 import { BackTop, Row, Col, Card, List, Button, Skeleton, message, Form, Input } from 'antd';
 import { server } from '../../config';
-import InfiniteScroll from 'react-infinite-scroll-component';
 import { useRouter } from 'next/router';
 
 function useWindowSize() {
@@ -176,6 +175,11 @@ export default function Message({ comments }) {
 					</Col>
 				</Row>
 			</div>
+			<BackTop>
+				<span>
+					<img className="top-arrow" src="/assets/images/arrow.png" />
+				</span>
+			</BackTop>
 		</React.Fragment>
 	);
 }
