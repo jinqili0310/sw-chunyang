@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:33:11
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-09 12:35:38
- * @FilePath: \sw-chunyang\pages\fanmade\index.js
+ * @LastEditTime: 2021-04-11 01:56:24
+ * @FilePath: /sw-chunyang/pages/fanmade/index.js
  */
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
@@ -41,6 +41,9 @@ export default function Fanmade(){
     return (
         <React.Fragment>
             <div className="fix-top">{size.width > 839 ? <Navbar /> : <Navberger />}</div>
+			<div className="fix-content">
+				
+			</div>
         </React.Fragment>
     )
 }

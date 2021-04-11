@@ -2,11 +2,14 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-06 22:22:46
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-10 13:20:19
+ * @LastEditTime: 2021-04-10 17:45:12
  * @FilePath: /sw-chunyang/pages/components/navberger.js
  */
 import React, { useState } from 'react';
 import { Menu, Dropdown } from 'antd';
+// import { useRouter } from 'next/router';
+
+// const { SubMenu } = Menu;
 
 const menu = (
 	<Menu>
@@ -34,6 +37,7 @@ const menu = (
 );
 
 export default function Navberger() {
+	// const router = useRouter();
 	return (
 		<React.Fragment>
 			<div className="nav-div">

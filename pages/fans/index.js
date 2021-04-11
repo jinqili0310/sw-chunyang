@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:30:50
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-10 14:05:43
+ * @LastEditTime: 2021-04-10 14:11:15
  * @FilePath: /sw-chunyang/pages/fans/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -41,7 +41,7 @@ export default function Fans(){
     return (
         <React.Fragment>
             <div className="fix-top">{size.width > 839 ? <Navbar /> : <Navberger />}</div>
-			<Row className="fix-content double-memu">
+			<Row className="fix-content double-menu">
 				<Col className="col-left double-col" xs={24} sm={24} md={12} lg={12} xl={12}>
 					<a href="/fanmade">
 						<img src="/assets/images/fanmade.png" />

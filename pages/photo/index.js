@@ -2,13 +2,14 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:27:05
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-10 14:04:47
+ * @LastEditTime: 2021-04-10 17:27:23
  * @FilePath: /sw-chunyang/pages/photo/index.js
  */
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
 import Navberger from '../components/navberger';
-import { BackTop } from 'antd';
+import { List, Card, Radio } from 'antd';
+import { twitter } from '../components/twitter';
 
 function useWindowSize() {
 	const [ windowSize, setWindowSize ] = useState({
@@ -35,13 +36,106 @@ function useWindowSize() {
 	return windowSize;
 }
 
-export default function Photo(){
-    const size = useWindowSize();
+export default function Photo() {
+	const size = useWindowSize();
+	const [ source, setSource ] = useState('img');
 
-    return (
-        <React.Fragment>
-            <div className="fix-top">{size.width > 839 ? <Navbar /> : <Navberger />}</div>
-			
-        </React.Fragment>
-    )
+	const onChange = (e) => {
+		// console.log(`radio checked:${e.target.value}`);
+		setSource(e.target.value);
+	};
+
+	return (
+		<React.Fragment>
+			<div className="fix-top">{size.width > 839 ? <Navbar /> : <Navberger />}</div>
+			<div className="fix-content photo-content">
+				<div className="twi-radio">
+					<Radio.Group onChange={onChange} defaultValue="img">
+						<Radio.Button value="img"> PHOTO </Radio.Button>
+						<Radio.Button value="vid"> VIDEO </Radio.Button>
+					</Radio.Group>
+				</div>
+				{source == 'img' ? (
+					<div className="twi-src">
+						<List
+							grid={{
+								gutter: 16,
+								xs: 2,
+								sm: 2,
+								md: 2,
+								lg: 4,
+								xl: 4,
+								xxl: 4
+							}}
+							pagination={{
+								onChange: (page) => {
+									console.log(page);
+								},
+								pageSize: 8,
+								pageSizeOptions: [ 8 ],
+								total: 1250
+							}}
+							dataSource={twitter.filter((item) => item.type === 'Image')}
+							renderItem={(item) => (
+								<List.Item>
+									<div className="img-card">
+										<a href={item.url} download target="__blank">
+											<Card cover={<img src={item.url} />} loading={true} bordered={false} />
+										</a>
+									</div>
+								</List.Item>
+							)}
+						/>
+					</div>
+				) : (
+					<div className="twi-source">
+						<List
+							grid={{
+								gutter: 16,
+								xs: 2,
+								sm: 2,
+								md: 2,
+								lg: 4,
+								xl: 4,
+								xxl: 4
+							}}
+							pagination={{
+								onChange: (page) => {
+									console.log(page);
+								},
+								pageSize: 8,
+								pageSizeOptions: [ 8 ]
+							}}
+							dataSource={twitter.filter((item) => item.type === 'Video')}
+							renderItem={(item) => (
+								<List.Item>
+									<div className="img-card vid-card">
+										<a href={item.url} target="__blank">
+											<Card
+												cover={
+													// <video controls controlsList="download" autoPlay={false} muted loop>
+													// 	<source src={item.url} type="video/mp4" />
+													// </video>
+													<iframe
+														src={`${item.url}?autoplay=1`}
+														frameBorder="0"
+														allowFullScreen
+														loading="lazy"
+														allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+														style={{ aspectRatio: '315/560' }}
+													/>
+												}
+												loading={true}
+												bordered={false}
+											/>
+										</a>
+									</div>
+								</List.Item>
+							)}
+						/>
+					</div>
+				)}
+			</div>
+		</React.Fragment>
+	);
 }

@@ -41,7 +41,7 @@ export default function PhotoPlaylist() {
 	return (
 		<React.Fragment>
 			<div className="fix-top">{size.width > 839 ? <Navbar /> : <Navberger />}</div>
-			<Row className="fix-content double-memu">
+			<Row className="fix-content double-menu">
 				<Col className="col-left double-col" xs={24} sm={24} md={12} lg={12} xl={12}>
 					<a href="/photo">
 						<img src="/assets/images/photo.png" />
