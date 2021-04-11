@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-11 12:04:44
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 14:56:13
+ * @LastEditTime: 2021-04-11 15:46:57
  * @FilePath: /sw-chunyang/pages/api/comments/index.js
  */
 import dbConnect from '../../../utils/dbConnect';
@@ -20,6 +20,7 @@ export default async (req, res) => {
 
 				res.status(200).json({ success: true, data: comments });
 			} catch (error) {
+				res.status(504).json(error)
 				res.status(400).json({ success: false });
 			}
 			break;
