@@ -911,7 +911,7 @@ iframe[src*="vimeo.com"] {
 }
 .vid-card .ant-card-cover {
 	overflow: hidden;
-	/* padding-top: 150%; */
+	padding-top: 150%;
 	object-fit: cover;
 }
 .vid-card .ant-card-cover iframe {
@@ -919,6 +919,7 @@ iframe[src*="vimeo.com"] {
 	top: 0;
 	bottom: 0;
 	height: 100% !important;
+	width: 100% !important;
 }
 
 /* playlist */
