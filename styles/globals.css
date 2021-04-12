@@ -436,6 +436,8 @@ a {
 	.profile-more {
 		margin: 3em 1em 2em 2em;
 	}
+}
+@media (min-width: 1025px) {
 	html,
 	body {
 		background: url("/assets/images/background.jpg") no-repeat center center fixed;
@@ -1043,9 +1045,9 @@ iframe[src*="vimeo.com"] {
 	z-index: 50;
 	position: fixed;
 	width: 100%;
-	min-height: 30vh;
+	/* min-height: 30vh; */
 	background: url("/assets/images/background.jpg") fixed;
-	/* padding-bottom: 10px; */
+	padding-bottom: 3vw;
 }
 /* .play-top > div > img {
 	width: 100%;
@@ -1184,14 +1186,14 @@ iframe[src*="vimeo.com"] {
 .message-div {
 	margin: 0 10%;
 }
-@media (min-width: 840px) {
+@media (min-width: 768px) {
 	.message-left {
 		position: fixed;
 		height: auto;
 		width: 50%;
 	}
 }
-@media (max-width: 839px) {
+@media (max-width: 767px) {
 	.message-left {
 		background: url("/assets/images/background.jpg") no-repeat;
 		/* z-index: 100;

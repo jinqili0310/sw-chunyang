@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:38:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 15:24:50
+ * @LastEditTime: 2021-04-11 20:27:45
  * @FilePath: /sw-chunyang/pages/message/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -44,7 +44,7 @@ export default function Message({ comments }) {
 	const [ isSubmitting, setIsSubmitting ] = useState(false);
 
 	const createComment = async (values) => {
-		console.log(JSON.stringify(values));
+		// console.log(JSON.stringify(values));
 		const res = await fetch(`${server}/api/comments`, {
 			method: 'POST',
 			headers: {
@@ -58,7 +58,7 @@ export default function Message({ comments }) {
 		router.reload();
 	};
 	const handleSubmit = (values) => {
-		console.log(`values: ${JSON.stringify(values)}`);
+		// console.log(`values: ${JSON.stringify(values)}`);
 		setIsSubmitting(true);
 		createComment(values);
 	};
@@ -150,6 +150,6 @@ export default function Message({ comments }) {
 Message.getInitialProps = async () => {
 	const res = await fetch(`${server}/api/comments`);
 	const { data } = await res.json();
-	console.log(data)
+	// console.log(data)
 	return { comments: data };
 };
