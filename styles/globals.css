@@ -1245,7 +1245,6 @@ iframe[src*="vimeo.com"] {
 	margin: 0 auto;
 }
 .fix-fans .ant-card-body {
-	width: 320px;
 	color: #f63e2c;
 	font-family: "Iropke Batang";
 	text-align: center;
@@ -1254,19 +1253,21 @@ iframe[src*="vimeo.com"] {
 .fix-fans .ant-card-cover {
 	border: 4px solid #f63e2c;
 	border-radius: 10px;
-	overflow: hidden;
+	overflow: hidden !important;
 }
 .fix-fans .ant-card-cover iframe {
 	margin: -2px;
 	width: calc(100% + 4px);
 }
 .fix-fans .ant-card {
+	width: 300px;
 	border: 4px solid #f63e2c;
-	border-radius: 10px;
+	overflow: hidden;
+	border-radius: 25px;
 	background: transparent;
-	padding: 10px;
+	padding: 20px;
 	margin: 2%;
-	height: 320px;
+	height: 330px;
 }
 .fix-fans p {
 	color: #feb620;
@@ -1275,6 +1276,6 @@ iframe[src*="vimeo.com"] {
 }
 @media (min-width: 1186px) {
 	.fix-fans {
-		margin-top: calc(100px + 10%);
+		margin-top: calc(100px + 5%);
 	}
 }
