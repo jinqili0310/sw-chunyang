@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:27:05
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 18:17:49
+ * @LastEditTime: 2021-04-11 23:51:20
  * @FilePath: /sw-chunyang/pages/photo/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -72,8 +72,7 @@ export default function Photo() {
 									console.log(page);
 								},
 								pageSize: 8,
-								pageSizeOptions: [ 8 ],
-								total: 1250
+								pageSizeOptions: [ 8 ]
 							}}
 							dataSource={twitter.filter((item) => item.type === 'Image')}
 							renderItem={(item) => (
