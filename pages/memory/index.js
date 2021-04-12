@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-07 22:13:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 17:26:56
- * @FilePath: /sw-chunyang/pages/memory/index.js
+ * @LastEditTime: 2021-04-12 15:58:08
+ * @FilePath: \sw-chunyang\pages\memory\index.js
  */
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
@@ -899,6 +899,19 @@ export default function Memory() {
 						<div className={`memory-source source-awd ${iphone}`}>
 							<a href="https://soundcloud.com/official_theboyz/like_a_birthday_cake" target="__blank">
 							Berry
+							</a>
+						</div>
+					</div>
+					<div className="memory-date">
+						<div className="memory-left">
+							<span className="memory-month">
+								Apr 12<div>2021</div>
+							</span>
+						</div>
+						<div className="memory-right">Birthday VLIVE</div>
+						<div className={`memory-source source-awd ${iphone}`}>
+							<a href="https://www.vlive.tv/post/0-22309943" target="__blank">
+							베리베리 감사
 							</a>
 						</div>
 					</div>
