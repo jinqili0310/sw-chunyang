@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:27:05
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 18:16:03
+ * @LastEditTime: 2021-04-11 18:17:49
  * @FilePath: /sw-chunyang/pages/photo/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -117,7 +117,7 @@ export default function Photo() {
 													// 	<source src={item.url} type="video/mp4" />
 													// </video>
 													<iframe
-														src={`${item.url}?autoplay=1&controls=1`}
+														src={item.url}
 														frameBorder="0"
 														allowFullScreen
 														loading="lazy"
