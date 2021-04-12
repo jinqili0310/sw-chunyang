@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:27:05
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 02:13:03
+ * @LastEditTime: 2021-04-11 17:53:18
  * @FilePath: /sw-chunyang/pages/photo/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -113,17 +113,17 @@ export default function Photo() {
 										<a href={item.url} target="__blank">
 											<Card
 												cover={
-													// <video controls controlsList="download" autoPlay={false} muted loop>
-													// 	<source src={item.url} type="video/mp4" />
-													// </video>
-													<iframe
-														src={`${item.url}?autoplay=1`}
-														frameBorder="0"
-														allowFullScreen
-														loading="lazy"
-														allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-														style={{ aspectRatio: '315/560' }}
-													/>
+													<video controls controlsList="download" autoPlay={true} muted loop>
+														<source src={item.url} type="video/mp4" />
+													</video>
+													// <iframe
+													// 	src={`${item.url}?autoplay=1`}
+													// 	frameBorder="0"
+													// 	allowFullScreen
+													// 	loading="lazy"
+													// 	allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+													// 	// style={{ aspectRatio: '315/560' }}
+													// />
 												}
 												loading={true}
 												bordered={false}

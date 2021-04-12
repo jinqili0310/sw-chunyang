@@ -752,6 +752,12 @@ a {
 	margin: 3vw 2vw;
 	box-shadow: 0 0 0 2vw #feb620;
 }
+.memory-vid iframe {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	height: 100% !important;
+}
 .top-arrow {
 	width: 20px;
 }
@@ -773,12 +779,6 @@ a {
 	/* width: 90%; */
 	padding-bottom: 10px;
 	padding-left: 2.5vw;
-}
-.memory-vid iframe {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	height: 100% !important;
 }
 .source-awd {
 	font-family: "Ageo";
@@ -907,7 +907,18 @@ iframe[src*="vimeo.com"] {
 	color: #f63e2c !important;
 }
 .vid-card {
-	aspect-ratio: 315/560 !important;
+	/* aspect-ratio: 315/560 !important; */
+}
+.vid-card .ant-card-cover {
+	overflow: hidden;
+	/* padding-top: 150%; */
+	object-fit: cover;
+}
+.vid-card .ant-card-cover iframe {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	height: 100% !important;
 }
 
 /* playlist */

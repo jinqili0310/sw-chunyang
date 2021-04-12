@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-07 22:13:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 11:10:15
+ * @LastEditTime: 2021-04-11 17:26:56
  * @FilePath: /sw-chunyang/pages/memory/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -887,6 +887,19 @@ export default function Memory() {
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 								/>
 							</div>
+						</div>
+					</div>
+					<div className="memory-date">
+						<div className="memory-left">
+							<span className="memory-month">
+								Apr 12<div>2021</div>
+							</span>
+						</div>
+						<div className="memory-right">SoundCloud</div>
+						<div className={`memory-source source-awd ${iphone}`}>
+							<a href="https://soundcloud.com/official_theboyz/like_a_birthday_cake" target="__blank">
+							Berry
+							</a>
 						</div>
 					</div>
 				</div>
