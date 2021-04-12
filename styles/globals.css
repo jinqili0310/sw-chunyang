@@ -747,6 +747,8 @@ a {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-khtml-border-radius: 10px;
+	padding-top: 50%;
+	object-fit: cover;
 	margin: 3vw 2vw;
 	box-shadow: 0 0 0 2vw #feb620;
 }
@@ -773,9 +775,10 @@ a {
 	padding-left: 2.5vw;
 }
 .memory-vid iframe {
-	margin-bottom: -8px;
-	width: 100%;
-	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	height: 100% !important;
 }
 .source-awd {
 	font-family: "Ageo";
@@ -913,61 +916,66 @@ iframe[src*="vimeo.com"] {
 	width: 100vw;
 	/* overflow: hidden; */
 	z-index: 10;
-	margin: 0 auto;
+	margin: calc(100px + 40%) 10% 10% 10%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 .player-fix {
-	width: 90%;
+	width: 45%;
 	max-width: 560px;
 	position: fixed;
-	margin: 0 5%;
-	z-index: 8;
-}
-.player-fix img {
-	z-index: 50;
-	position: absolute;
-	border: none;
-	top: 0;
-	left: 0;
-	width: 100%;
+	margin: 0 auto;
+	/* z-index: 8;  */
+	overflow: hidden;
+	/* margin-top: 6vw; */
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	box-shadow: 0 0 0 3vw #feb620;
+	padding-top: 20%;
+	object-fit: cover;
+	/* position: relative; */
 }
 .player-fix iframe {
 	position: absolute;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	/* position: absolute;
 	z-index: 10;
 	width: 80%;
-	top: 45%;
-	left: 5%;
-}
-.playlist-right {
-	/* position: fixed; */
-	/* overflow: scroll; */
+	left: 0;
+	right: 0; */
 }
 @media (min-width: 951px) and (max-width: 1140px) {
 	.playlist-card img {
 		width: 100px !important;
-		aspect-ratio: 560/315;
+		/* aspect-ratio: 560/315; */
 	}
-	.player-fix img {
+	/* .player-fix img {
 		width: 80% !important;
 	}
 	.player-fix iframe {
 		width: 64% !important;
 		top: 35% !important;
-	}
+	} */
 }
 @media (min-width: 852px) and (max-width: 950px) {
 	.playlist-card img {
-		/* width: 50px !important;
+		width: 50px !important;
 		height: 30px;
-		aspect-ratio: 560/315; */
+		/* aspect-ratio: 560/315; */
 		display: none !important;
 	}
-	.player-fix img {
+	/* .player-fix img {
 		width: 80% !important;
 	}
 	.player-fix iframe {
 		width: 64% !important;
 		top: 35% !important;
-	}
+	} */
 }
 @media (min-width: 840px) and (max-width: 851px) {
 	.playlist-card p {
@@ -976,23 +984,29 @@ iframe[src*="vimeo.com"] {
 	.playlist-card img {
 		display: none !important;
 	}
-	.player-fix img {
+	/* .player-fix img {
 		width: 80% !important;
 	}
 	.player-fix iframe {
 		width: 64% !important;
 		top: 35% !important;
-	}
+	} */
 }
 .playlist-list {
 	list-style: none;
-	margin: 2% auto;
-	padding: 0 5% 2% 10%;
+	margin: 2% 5% 2% 10%;
+	/* padding: 0 5% 2% 10%; */
+	border: 4px dashed #feb620;
+	padding: 1em 1em .5em 1em;
+	border-radius: 10px;
+	overflow: hidden;
 }
 .playlist-card {
 	display: flex;
 	align-items: center;
-	margin-bottom: 2em;
+	/* margin-bottom: 2em; */
+	padding: 1em 0;
+	border-bottom: 4px dashed #feb620;
 }
 .playlist-card img {
 	width: 180px;
@@ -1006,11 +1020,8 @@ iframe[src*="vimeo.com"] {
 	padding-right: 2em;
 	font-family: 'Montserrat', sans-serif;
 }
-.playlist-card:nth-child(odd) p {
+.playlist-card p {
 	color: #f63e2c;
-}
-.playlist-card:nth-child(even) p {
-	color: #feb620;
 }
 /* 2 cols */
 .top-bottom {
@@ -1022,7 +1033,7 @@ iframe[src*="vimeo.com"] {
 	width: 100%;
 	min-height: 30vh;
 	background: url("/assets/images/background.jpg") fixed;
-	padding-bottom: 5%;
+	/* padding-bottom: 10px; */
 }
 /* .play-top > div > img {
 	width: 100%;
@@ -1046,13 +1057,13 @@ iframe[src*="vimeo.com"] {
 	width: 85%;
 	/* height: 60%; */
 	overflow: hidden;
-	margin-top: 3vw;
+	margin-top: 6vw;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-khtml-border-radius: 10px;
 	box-shadow: 0 0 0 3vw #feb620;
-	padding-top: 40%;
+	padding-top: 50%;
 	object-fit: cover;
 	position: relative;
 	/* width: 300px;
@@ -1068,22 +1079,22 @@ iframe[src*="vimeo.com"] {
 	height: 100%;
 }
 .play-bottom {
-	padding-top: calc(90px + 40%);
+	padding-top: calc(80px + 52%);
 }
 .bottom-list {
 	list-style: none;
 	margin: 2%;
 	/* padding: 0 2% 2% 5%; */
-	border: 2px dashed #feb620;
-	padding: 1em 1em .5em 1em;
+	border: 3px dashed #feb620;
+	padding: .7em .7em .5em .7em;
 	border-radius: 10px;
 	overflow: hidden;
 }
 .bottom-card {
 	display: flex;
 	align-items: center;
-	padding: 1em 0;
-	border-bottom: 2px dashed #feb620;
+	padding: .5em 0;
+	border-bottom: 3px dashed #feb620;
 }
 .bottom-card img {
 	width: 140px;
@@ -1127,7 +1138,7 @@ iframe[src*="vimeo.com"] {
 .message-form button.ant-btn.ant-btn-primary:focus {
 	background: transparent;
 	border: none;
-	width: 100px;
+	width: 90px;
 	text-shadow: none;
 	box-shadow: none;
 }
@@ -1164,17 +1175,17 @@ iframe[src*="vimeo.com"] {
 @media (min-width: 840px) {
 	.message-left {
 		position: fixed;
-		height:auto;
+		height: auto;
 		width: 50%;
 	}
 }
-@media (max-width:839px) {
+@media (max-width: 839px) {
 	.message-left {
 		background: url("/assets/images/background.jpg") no-repeat;
 		/* z-index: 100;
 		position: fixed; */
 		position: relative;
-		height:auto;
+		height: auto;
 		width: 100%;
 	}
 	/* .fix-message {
@@ -1192,7 +1203,7 @@ iframe[src*="vimeo.com"] {
 	border: 2px solid #f63e2c;
 	border-radius: 10px;
 }
-.fetch-comment .ant-card-head-title{
+.fetch-comment .ant-card-head-title {
 	padding: 6px 12px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
@@ -1205,6 +1216,51 @@ iframe[src*="vimeo.com"] {
 	padding: 0;
 	min-height: none;
 }
-.fetch-comment .ant-card-head::after{
+.fetch-comment .ant-card-head::after {
 	display: none;
+}
+
+/* fanmade */
+.fix-fans {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 100%;
+	width: 100%;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+.fix-fans .ant-card-body {
+	width: 320px;
+	color: #f63e2c;
+	font-family: "Iropke Batang";
+	text-align: center;
+	font-size: 20px;
+}
+.fix-fans .ant-card-cover {
+	border: 4px solid #f63e2c;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.fix-fans .ant-card-cover iframe {
+	margin: -2px;
+	width: calc(100% + 4px);
+}
+.fix-fans .ant-card {
+	border: 4px solid #f63e2c;
+	border-radius: 10px;
+	background: transparent;
+	padding: 10px;
+	margin: 2%;
+	height: 320px;
+}
+.fix-fans p {
+	color: #feb620;
+	margin-top: 1em;
+	font-family: 'Ageo';
+}
+@media (min-width: 1186px) {
+	.fix-fans {
+		margin-top: calc(100px + 10%);
+	}
 }

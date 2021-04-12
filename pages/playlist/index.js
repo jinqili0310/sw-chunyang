@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-09 12:28:13
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-11 11:48:19
+ * @LastEditTime: 2021-04-11 17:09:34
  * @FilePath: /sw-chunyang/pages/playlist/index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -89,11 +89,12 @@ export default function Playlist({ data, dataTwo }) {
 							<div className="playlist-left">
 								<div
 									className="player-fix"
-									style={{ aspectRatio: '434/466' }}
+									// style={{ aspectRatio: '560/315' }}
 									onClick={toggleFullScreen}
 								>
-									<img src="/assets/images/TV.png" />
+									{/* <img src="/assets/images/TV.png" /> */}
 									<iframe
+									// style={{ aspectRatio: '560/315' }}
 										src={current}
 										id="fullscreenVideo"
 										frameBorder="0"
