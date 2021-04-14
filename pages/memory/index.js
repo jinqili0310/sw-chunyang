@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-04-07 22:13:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-04-12 15:58:08
+ * @LastEditTime: 2021-04-14 08:18:14
  * @FilePath: \sw-chunyang\pages\memory\index.js
  */
 import React, { useEffect, useState } from 'react';
@@ -913,6 +913,24 @@ export default function Memory() {
 							<a href="https://www.vlive.tv/post/0-22309943" target="__blank">
 							베리베리 감사
 							</a>
+						</div>
+					</div>
+					<div className="memory-date">
+						<div className="memory-left">
+							<span className="memory-month">
+								Apr 14<div>2021</div>
+							</span>
+						</div>
+						<div className="memory-right">BE YOUR OWN KING</div>
+						<div className={`memory-source source-vid ${iphone}`}>
+							<div className="memory-vid" style={{ aspectRatio: '560/315' }}>
+								<iframe
+									src="https://www.youtube.com/embed/IYo55ma5PaY"
+									frameBorder="0"
+									allowFullScreen
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
